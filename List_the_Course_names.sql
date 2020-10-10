@@ -1,0 +1,10 @@
+select 
+    P.name as "PROFESSOR.NAME", 
+    c.name as "COURSE.NAME"
+from PROFESSOR AS P
+    INNER JOIN SCHEDULE AS S
+        ON S.PROFESSOR_ID = P.ID
+    INNER JOIN COURSE AS C
+        ON S.COURSE_ID = C.ID
+GROUP BY P.name, c.name
+ORDER BY P.NAME, C.NAME
